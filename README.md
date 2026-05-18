@@ -1,3 +1,4 @@
+<img width="288" height="519" alt="Снимок экрана — 2026-05-18 в 20 11 18" src="https://github.com/user-attachments/assets/7c2660f9-c020-4171-bdec-a49c8509a5e4" />
 # Task Scheduler 📱⏰
 
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
