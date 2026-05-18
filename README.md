@@ -2,7 +2,6 @@
 
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A beautiful and functional task scheduler iOS app with local notifications that remind you about upcoming deadlines — even when the app is closed.
 
