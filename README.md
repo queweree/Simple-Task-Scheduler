@@ -85,7 +85,7 @@ task_scheduler/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/task-scheduler.git
+git clone https://github.com/queweree/task-scheduler.git
 cd task-scheduler
 ```
 
