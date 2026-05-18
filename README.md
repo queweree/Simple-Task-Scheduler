@@ -8,10 +8,15 @@ A beautiful and functional task scheduler iOS app with local notifications that 
 ---
 
 ## 📸 Screenshots
+<p align="center">
+ <img width="355" height="762" alt="Снимок экрана — 2026-05-18 в 20 23 49" src="https://github.com/user-attachments/assets/6cf3c612-a073-4faa-b0fb-f4a7db2ca1c3" />
+  <img width="288" height="519" alt="Снимок экрана — 2026-05-18 в 20 11 18" src="https://github.com/user-attachments/assets/7c2660f9-c020-4171-bdec-a49c8509a5e4" />
+</p>
 
-<img width="288" height="519" alt="Снимок экрана — 2026-05-18 в 20 11 18" src="https://github.com/user-attachments/assets/7c2660f9-c020-4171-bdec-a49c8509a5e4" />
+<p align="center">
+  <em>Main app interface (left) | System notification (right)</em>
+</p>
 
-*System notification showing a task expiration alert*
 
 ---
 
