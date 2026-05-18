@@ -14,7 +14,7 @@ A beautiful and functional task scheduler iOS app with local notifications that 
 </p>
 
 <p align="center">
-  <em>Main app interface (left) | System notification (right)</em>
+  <em>Main app interface | System notification </em>
 </p>
 
 
