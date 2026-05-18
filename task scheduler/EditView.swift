@@ -42,10 +42,10 @@ struct EditView: View {
                 .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(
-                    leading: Button("Отмена") {
+                    leading: Button("Cancel") {
                         presentMode.wrappedValue.dismiss()
                     },
-                    trailing: Button("Сохранить") {
+                    trailing: Button("Save") {
                         if let index = elements.items.firstIndex(where: { $0.id == editingItem.id }) {
                             let calendar = Calendar.current
                             let finalDate = calendar.date(
@@ -54,9 +54,15 @@ struct EditView: View {
                                 second: 0,
                                 of: date
                             ) ?? Date.now
-                            
+                            let oldItem = elements.items[index]
+                            elements.cancelNotifications(for: oldItem)
                             elements.items[index].name = name
                             elements.items[index].dateExpiring = finalDate
+                            elements.items[index].isExpired = finalDate <= Date.now
+                            if !elements.items[index].isDone && finalDate > Date.now {
+                                elements.scheduleExpiryNotification(for: elements.items[index])
+                                elements.scheduleReminders(for: elements.items[index])
+                            }
                         }
                         presentMode.wrappedValue.dismiss()
                     }

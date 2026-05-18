@@ -55,7 +55,7 @@ struct AddView: View {
                             isExpired: false,
                             isDone: false
                         )
-                        elements.items.append(newItem)
+                        elements.addItemWithNotifications(newItem)
                         presentMode.wrappedValue.dismiss()
                     }.disabled(!isFormValid)
                 )

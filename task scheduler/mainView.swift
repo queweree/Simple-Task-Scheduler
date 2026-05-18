@@ -3,8 +3,8 @@ import UserNotifications
 import Foundation
 let backColor = LinearGradient(
     colors: [
-        Color(red: 0.85, green: 0.70, blue: 0.55),  // карамельный
-        Color(red: 0.80, green: 0.60, blue: 0.45)   // теплый янтарный
+        Color(red: 0.85, green: 0.70, blue: 0.55),
+        Color(red: 0.80, green: 0.60, blue: 0.45)
     ],
     startPoint: .top,
     endPoint: .bottom
@@ -57,9 +57,7 @@ struct MainView: View {
                                             .foregroundColor(.green)
                                             .contentShape(Rectangle())
                                             .onTapGesture{
-                                                if let index = elements.items.firstIndex(where: { $0.id == el.id }) {
-                                                    elements.items[index].isDone.toggle()
-                                                }
+                                                elements.toggleDoneWithNotifications(for: el)
                                             }
                                     }
                                     else if countRemainingTime(for: el) <= 0{
@@ -67,9 +65,7 @@ struct MainView: View {
                                             .foregroundColor(.red)
                                             .contentShape(Rectangle())
                                             .onTapGesture{
-                                                if let index = elements.items.firstIndex(where: { $0.id == el.id }) {
-                                                    elements.items[index].isDone.toggle()
-                                                }
+                                                elements.toggleDoneWithNotifications(for: el)
                                             }
                                     }
                                     else {
@@ -77,9 +73,7 @@ struct MainView: View {
                                             .foregroundColor(.gray)
                                             .contentShape(Rectangle())
                                             .onTapGesture{
-                                                if let index = elements.items.firstIndex(where: { $0.id == el.id }) {
-                                                    elements.items[index].isDone.toggle()
-                                                }
+                                                elements.toggleDoneWithNotifications(for: el)
                                             }
                                         
                                     }
@@ -113,7 +107,9 @@ struct MainView: View {
         }
         .onAppear{
             //elements.loadTestData()
+            elements.requestNotificationPermission()
             elements.startTimer()
+            elements.rescheduleAllNotifications()
         }
         .onDisappear {
             elements.stopTimer()
@@ -123,7 +119,7 @@ struct MainView: View {
         return item.dateExpiring.timeIntervalSinceNow
     }
     func deleteItem(at offsets: IndexSet){
-        elements.items.remove(atOffsets: offsets)
+        elements.removeItemWithNotifications(at: offsets)
     }
     
 }
